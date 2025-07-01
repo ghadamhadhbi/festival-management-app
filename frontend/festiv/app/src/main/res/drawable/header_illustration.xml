@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fichier à enregistrer dans res/drawable/header_illustration.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fond dégradé -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#FF5722"
+                android:centerColor="#FF8A65"
+                android:endColor="#FFAB91" />
+        </shape>
+    </item>
+
+    <!-- Motif abstrait supérieur -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#33FFFFFF" />
+            <size
+                android:width="300dp"
+                android:height="300dp" />
+            <stroke
+                android:width="2dp"
+                android:color="#22FFFFFF" />
+        </shape>
+        <translate
+            android:fromXDelta="-50%"
+            android:fromYDelta="-50%" />
+    </item>
+
+    <!-- Motif abstrait inférieur -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#33FFFFFF" />
+            <size
+                android:width="200dp"
+                android:height="200dp" />
+            <stroke
+                android:width="2dp"
+                android:color="#22FFFFFF" />
+        </shape>
+        <translate
+            android:fromXDelta="30%"
+            android:fromYDelta="20%" />
+    </item>
+
+    <!-- Petits cercles décoratifs -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#44FFFFFF" />
+            <size
+                android:width="30dp"
+                android:height="30dp" />
+        </shape>
+        <translate
+            android:fromXDelta="60%"
+            android:fromYDelta="-30%" />
+    </item>
+
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#44FFFFFF" />
+            <size
+                android:width="20dp"
+                android:height="20dp" />
+        </shape>
+        <translate
+            android:fromXDelta="-20%"
+            android:fromYDelta="60%" />
+    </item>
+
+    <!-- Élément de vague en bas -->
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <size android:height="60dp" />
+            <solid android:color="#22FFFFFF" />
+            <corners
+                android:topLeftRadius="100dp"
+                android:topRightRadius="100dp" />
+        </shape>
+    </item>
+</layer-list>

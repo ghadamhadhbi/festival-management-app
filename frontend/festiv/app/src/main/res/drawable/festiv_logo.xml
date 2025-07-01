@@ -1,0 +1,43 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+
+    <!-- Cercle principal -->
+    <path
+        android:fillColor="#673AB7"
+        android:pathData="M40,40m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0" />
+
+    <!-- Cercle intérieur -->
+    <path
+        android:fillColor="#9C27B0"
+        android:pathData="M40,40m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0" />
+
+    <!-- Lettre F stylisée -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,24L48,24L48,30L38,30L38,36L46,36L46,42L38,42L38,56L32,56L32,24Z" />
+
+    <!-- Éléments musicaux -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M52,32L52,48" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,48a4,3 0,1 0,4 0a4,3 0,1 0,-4 0" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M58,28L58,44" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M56,44a4,3 0,1 0,4 0a4,3 0,1 0,-4 0" />
+
+</vector>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    tools:context=".Activities.GetStarted">
+
+    <!-- Arrière-plan violet -->
+    <View
+        android:id="@+id/top_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/purple_gradient_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Motifs décoratifs -->
+    <ImageView
+        android:id="@+id/decoration_pattern"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.15"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pattern_dots"
+        app:layout_constraintBottom_toBottomOf="@id/top_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/decorative_pattern" />
+
+    <!-- Conteneur principal en blanc -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_content_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="48dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp">
+
+            <!-- Logo illustration -->
+            <ImageView
+                android:id="@+id/festiv_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/festiv_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/festiv_logo" />
+
+            <!-- Titre principal -->
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:elevation="2dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/festiv"
+                android:textColor="#673AB7"
+                android:textSize="56sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/festiv_logo" />
+
+            <!-- Sous-titre -->
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/playfair_display"
+                android:gravity="center"
+                android:text="@string/your_gateway_to_unforgettable_events"
+                android:textColor="#7952B3"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/app_title"
+                app:layout_constraintWidth_percent="0.85" />
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/discover_plan_and_attend_amazing_events_in_your_city"
+                android:textColor="#555555"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subtitle"
+                app:layout_constraintWidth_percent="0.9" />
+
+            <!-- Bouton d'action principal -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/purple_button_background"
+                android:fontFamily="@font/montserrat_medium"
+                android:minHeight="56dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/get_started"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                app:layout_constraintWidth_percent="0.8" />
+
+            <!-- Lien alternatif -->
+            <TextView
+                android:id="@+id/login_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/already_have_account"
+                android:textColor="#673AB7"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/floating_dot1"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:background="@drawable/purple_dot"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toTopOf="@id/main_content_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <View
+        android:id="@+id/floating_dot2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/purple_dot"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toTopOf="@id/main_content_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/festivalImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder_image"
+            android:contentDescription="Festival image"/>
+
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_bookmark"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/bookmark_button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/festivalImage"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#F5F5F5">
+
+            <TextView
+                android:id="@+id/festivalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/festivalDates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"/>
+
+            <Button
+                android:id="@+id/btnDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="View Details"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/purple_button_background"/>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

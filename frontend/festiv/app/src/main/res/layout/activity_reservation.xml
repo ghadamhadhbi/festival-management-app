@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202834"
+    tools:context=".Activities.ReservationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigationView"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reservation"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reserve_a_ticket"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Ticket Categories:"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp"/>
+            <LinearLayout
+                android:id="@+id/radioButtonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+                <!-- The radio buttons will be added here programmatically -->
+            </LinearLayout>
+
+
+            <!-- Added RadioGroup to group ticket selections -->
+            <RadioGroup
+                android:id="@+id/ticketCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Gold Ticket -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical">
+
+                    <RadioButton
+                        android:id="@+id/goldTicket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gold"
+                        android:textColor="#FFFFFF"/>
+
+                    <ImageButton
+                        android:id="@+id/goldInfo"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_info_outline"
+                        app:tint="#FFFFFF"
+                        android:contentDescription="Gold ticket info"/>
+
+                    <EditText
+                        android:id="@+id/goldQuantity"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:hint="Qty"
+                        android:inputType="number"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#A9A9A9"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical">
+
+                    <RadioButton
+                        android:id="@+id/silverTicket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/silver"
+                        android:textColor="#FFFFFF"/>
+
+                    <ImageButton
+                        android:id="@+id/silverInfo"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_info_outline"
+                        app:tint="#FFFFFF"
+                        android:contentDescription="Silver ticket info"/>
+
+                    <EditText
+                        android:id="@+id/silverQuantity"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:hint="Qty"
+                        android:inputType="number"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#A9A9A9"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <RadioButton
+                        android:id="@+id/bronzeTicket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/normal"
+                        android:textColor="#FFFFFF"/>
+
+                    <ImageButton
+                        android:id="@+id/bronzeInfo"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_info_outline"
+                        app:tint="#FFFFFF"
+                        android:contentDescription="Bronze ticket info"/>
+
+                    <EditText
+                        android:id="@+id/bronzeQuantity"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:hint="Qty"
+                        android:inputType="number"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#A9A9A9"/>
+                </LinearLayout>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Added hidden EditText for numberOfPlaces that was missing -->
+        <EditText
+            android:id="@+id/numberOfPlaces"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:inputType="number"/>
+
+        <ImageView
+            android:id="@+id/seatingPreview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="0.00"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reserveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reserve"
+            android:background="@drawable/bg_gradient"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="12dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/paymentFormContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#202834"
+        android:visibility="gone"
+        android:padding="24dp"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Information"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Personal Information -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal Information"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#A9A9A9"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#A9A9A9"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#A9A9A9"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Payment Method Selection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Method"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/paymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Credit/Debit Card -->
+                <RadioButton
+                    android:id="@+id/creditCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Credit/Debit Card"
+                    android:textColor="#FFFFFF"
+                    android:checked="true"/>
+
+                <!-- PayPal -->
+                <RadioButton
+                    android:id="@+id/paypal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PayPal"
+                    android:textColor="#FFFFFF"/>
+
+                <!-- Tunisian Payment Methods -->
+                <RadioButton
+                    android:id="@+id/mobiflouss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobiflouss"
+                    android:textColor="#FFFFFF"/>
+
+                <RadioButton
+                    android:id="@+id/tunisie_net"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tunisie Net"
+                    android:textColor="#FFFFFF"/>
+            </RadioGroup>
+
+            <!-- Card Information (visible when credit card is selected) -->
+            <LinearLayout
+                android:id="@+id/cardInfoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/cardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Card Number"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A9A9A9"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <EditText
+                        android:id="@+id/expiryDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="MM/YY"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#A9A9A9"
+                        android:layout_marginEnd="8dp"/>
+
+                    <EditText
+                        android:id="@+id/cvv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="CVV"
+                        android:inputType="numberPassword"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#A9A9A9"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/cardHolderName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Card Holder Name"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A9A9A9"
+                    android:layout_marginBottom="24dp"/>
+            </LinearLayout>
+
+            <!-- PayPal Info (hidden by default) -->
+            <LinearLayout
+                android:id="@+id/paypalInfoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You will be redirected to PayPal to complete your payment"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+
+            <!-- Tunisian Payment Info (hidden by default) -->
+            <LinearLayout
+                android:id="@+id/tunisianPaymentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You will receive payment instructions via SMS"
+                    android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    android:id="@+id/backButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Back"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_outline_button"
+                    android:textColor="#FFFFFF"/>
+
+                <Button
+                    android:id="@+id/confirmPaymentButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Confirm Payment"
+                    android:background="@drawable/bg_gradient"
+                    android:textColor="#FFFFFF"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#1A1F28"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:itemTextColor="@drawable/nav_item_color_state"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</RelativeLayout>
